@@ -1,0 +1,37 @@
+<!-- component -->
+<div class="flex flex-col bg-white m-auto p-auto">
+  <h1 class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
+    Some situations to donate
+  </h1>
+  <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+    <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
+
+      <div *ngFor="let post of posts" class="inline-block px-3">
+        <div class="w-[20rem] h-[24rem] max-w-xs flex flex-col overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+          <img [src]="post.image" alt="" class="w-full h-32 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold text-gray-800 text-xl mb-2">
+              {{ post.title }}
+            </h3>
+            <p class="text-gray-600">
+              {{ post.content }}
+            </p>
+          </div>
+          <div class="flex items-center mx-2">
+            <img class="object-cover mx-2 rounded-full w-8 shrink-0 h-8 ring-1 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+
+            <div class="mx-2 mb-6">
+              <h1 class="font-semibold text-gray-800 dark:text-white">{{post.user ? post.user.lastName : "Unknown"}}</h1>
+              <span class="text-sm text-gray-500 dark:text-gray-400">{{post.user ? post.user.firstName : "unknown"}}</span>
+            </div>
+          </div>
+          <div class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center text-surface/75 dark:border-black/10 dark:text-neutral-300">
+            <small>{{post.createdAt}}</small>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
